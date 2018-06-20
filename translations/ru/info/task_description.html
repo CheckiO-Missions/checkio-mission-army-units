@@ -1,16 +1,15 @@
 <p>
-
-Вы - разработчик новой игры-стратегии и вам необходимо добавить в игру процесс создания армии. Для начала пускай будет 2 типа - AsianArmy and EuropeanArmy (каждый тип - отдельный класс). Также в игре будет 3 типа солдат: Swordsman (мечники), Lancer (копейщики) и Archer (лучники) (для производства каждого типа также нужно будет создать класс). У каждого типа армии есть свои названия для различных видов солдат. У европейской армии это Knight (для Swordsman), Raubritter (для Lancer) и Ranger (для Archer). У азиатской: Samurai (для Swordsman), Ronin (для Lancer) и Shinobi (для Archer). Также у каждой армии должны быть определенные методы:<br>
+Вы - разработчик новой игры-стратегии и вам необходимо добавить в игру процесс создания солдат. В первой версии игры будет 2 типа солдат - азиатские (AsianArmy) и европейские (EuropeanArmy), в будущем будут добавляться и другие типы. Каждый из типов должен являться наследником базового класса Army, в котором описаны методы создания различных видов солдат. Каждый солдат будет экземпляром одного из 3 классов: Swordsman (мечник), Lancer (копейщик) или Archer (лучник). У каждого типа армии есть свои названия для различных видов солдат. У европейской армии это Knight (для Swordsman), Raubritter (для Lancer) и Ranger (для Archer). У азиатской: Samurai (для Swordsman), Ronin (для Lancer) и Shinobi (для Archer). Методы для создания солдат следующие:<br>
 <br>
-<strong>add_swordsman</strong>(name) - добавляет 1 мечника с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Knight Richard", "Samurai Ryuk" etc.<br>
-<strong>add_lancer</strong>(name) - добавляет 1 копейщика с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Lancer Kyle", "Ronin Hanzo" etc.<br>
-<strong>add_archer</strong>(name) - добавляет 1 лучника с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Ranger Robin", "Shinobi Mei" etc.<br>
-<strong>show_army()</strong> - возвращает вашу армию (как тип dictionary).<br>
-<strong>show_swordsmans()</strong> - возвращает список всех ваших мечников.<br>
-<strong>show_lancers()</strong> - возвращает список всех ваших копейщиков.<br>
-<strong>show_archers()</strong> - возвращает список всех ваших лучников.<br>
+<strong>train_swordsman</strong>(name) - создает экземпляр класса Swordsman.<br>
+<strong>train_lancer</strong>(name) - создает экземпляр класса Lancer.<br>
+<strong>train_archer</strong>(name) - создает экземпляр класса Archer.<br>
 <br>
-Каждый пользователь может выбрать армию только 1 типа.
+Все 3 класса специализаций (Swordsman, Lancer и Archer) должны обладать методом <strong>introduce()</strong>, который возвращает строку, описывающую солдата в формате:<br>
+"'тип' 'имя', 'тип армии' 'специализация'", например:<br>
+"Raubritter Harold, European lancer"<br>
+"Shinobi Kirigae, Asian archer"<br>
+<br>
 В этой миссии вам необходимо использовать паттерн проектирования - <a href='https://en.wikipedia.org/wiki/Abstract_factory_pattern'>Abstract Factory</a>.
 </p>
 
@@ -20,35 +19,31 @@
 my_army = EuropeanArmy()
 enemy_army = AsianArmy()
 
-my_army.add_swordsman("Jaks")
-my_army.add_swordsman("Brin")
-my_army.add_lancer("Harold")
-my_army.add_archer("Robin")
-my_army.add_archer("May")
+soldier_1 = my_army.train_swordsman("Jaks")
+soldier_2 = my_army.train_lancer("Harold")
+soldier_3 = my_army.train_archer("Robin")
 
-enemy_army.add_swordsman("Kishimoto")
-enemy_army.add_lancer("Ayabusa")
-enemy_army.add_archer("Kirigae")
+soldier_4 = enemy_army.train_swordsman("Kishimoto")
+soldier_5 = enemy_army.train_lancer("Ayabusa")
+soldier_6 = enemy_army.train_archer("Kirigae")
 
-my_army.show_army() == {"Knights": 2, "Raubritters": 1, "Rangers": 2, "Total": 5}
-my_army.show_swordsmans() == ["Knight Jaks", "Knight Brin"]
-my_army.show_lancers() == ["Raubritter Harold"]
-my_army.show_archers() == ["Ranger Robin", "Ranger May"]
+soldier_1.introduce() == "Knight Jaks, Europen swordsman"
+soldier_2.introduce() == "Raubritter Harold, European lancer"
+soldier_3.introduce() == "Ranger Robin, European archer"
     
-enemy_army.show_army() == {"Samurais": 1, "Ronins": 1, "Shinobis": 1, "Total": 3}
-enemy_army.show_swordsmans() == ["Samurai Kishimoto"]
-enemy_army.show_lancers() == ["Ronin Ayabusa"]
-enemy_army.show_archers() == ["Shinobi Kirigae"]
+soldier_4.introduce() == "Samurai Kishimoto, Asian swordsman"
+soldier_5.introduce() == "Ronin Ayabusa, Asian lancer"
+soldier_6.introduce() == "Shinobi Kirigae, Asian archer"
 </pre>
 </p>
 <br>
 
 <p>
-    <strong>Входные данные: </strong>Методы и выражения 2 армий.
+    <strong>Входные данные: </strong>имена солдат и методы классов.
 </p>
 
 <p>
-    <strong>Выходные данные: </strong> Поведение экземпляров, как описано выше.
+    <strong>Выходные данные: </strong>Описание солдат.
 </p>
 
 
@@ -59,6 +54,6 @@ enemy_army.show_archers() == ["Shinobi Kirigae"]
 
 <p>
     <strong>Предусловия:</strong>
-    2 типа армий.
-    Не более 100 солдат в армии.
+    2 типа армий.<br>
+    3 типа солдат.
 </p>
