@@ -1,0 +1,64 @@
+<p>
+    You are the developer of the new strategy game and you need to add to this game the process of the army creation. Let's start with 2 types - AsianArmy and EuropeanArmy (each of them will be a class). Also in the game will be the 3 types of the soldiers - Swordsman, Lancer and Archer (also a classes). Each army has the unique names for those 3 types. For the EuropeanArmy there are: Knight (for Swordsman), Raubritter (for Lancer) and Ranger (for Archer). For the AsianArmy: Samurai (for Swordsman), Ronin (for Lancer) and Shinobi (for Archer).<br>
+Each army also has a methods:<br>
+<br>
+<strong>add_swordsman</strong>(name) - add 1 swordsman with choosen name to your army. Also add the right type before the name (depends on the army type). For example - "Knight Richard", "Samurai Ryuk" etc.<br>
+<strong>add_lancer</strong>(name) - add 1 lancer with choosen name to your army. Also add the right type before the name (depends on the army type). For example - "Lancer Kyle", "Ronin Hanzo" etc.<br>
+<strong>add_archer</strong>(name) - add 1 archer with choosen name to your army. Also add the right type before the name (depends on the army type). For example - "Ranger Robin", "Shinobi Mei" etc.<br>
+<strong>show_army()</strong> - returns your army as a dictionary. See more in the examples.<br>
+<strong>show_swordsmans()</strong> - returns the list of all your swordsmans.<br>
+<strong>show_lancers()</strong> - returns the list of all your lancers.<br>
+<strong>show_archers()</strong> - returns the list of all your archers.<br>
+<br>
+Every user can choose only one army type.
+In this mission you should use the <a href='https://en.wikipedia.org/wiki/Abstract_factory_pattern'>Abstract Factory</a> design patter.
+</p>
+
+<p>
+<strong>Example</strong>:
+<pre class="brush: python">
+my_army = EuropeanArmy()
+enemy_army = AsianArmy()
+
+my_army.add_swordsman("Jaks")
+my_army.add_swordsman("Brin")
+my_army.add_lancer("Harold")
+my_army.add_archer("Robin")
+my_army.add_archer("May")
+
+enemy_army.add_swordsman("Kishimoto")
+enemy_army.add_lancer("Ayabusa")
+enemy_army.add_archer("Kirigae")
+
+my_army.show_army() == {"Knights": 2, "Raubritters": 1, "Rangers": 2, "Total": 5}
+my_army.show_swordsmans() == ["Knight Jaks", "Knight Brin"]
+my_army.show_lancers() == ["Raubritter Harold"]
+my_army.show_archers() == ["Ranger Robin", "Ranger May"]
+    
+enemy_army.show_army() == {"Samurais": 1, "Ronins": 1, "Shinobis": 1, "Total": 3}
+enemy_army.show_swordsmans() == ["Samurai Kishimoto"]
+enemy_army.show_lancers() == ["Ronin Ayabusa"]
+enemy_army.show_archers() == ["Shinobi Kirigae"]
+</pre>
+</p>
+<br>
+
+<p>
+    <strong>Input: </strong>Statements and expression of the 2 armies.
+</p>
+
+<p>
+    <strong>Output: </strong> The behaviour as described.
+</p>
+
+
+<p class="for_info_only">
+    <strong>How it is used: </strong>
+    For game development.
+</p>
+
+<p>
+    <strong>Precondition:</strong>
+    2 types of the army.
+    No more than 100 units in the army.
+</p>

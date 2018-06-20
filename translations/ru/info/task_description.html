@@ -1,0 +1,64 @@
+<p>
+
+Вы - разработчик новой игры-стратегии и вам необходимо добавить в игру процесс создания армии. Для начала пускай будет 2 типа - AsianArmy and EuropeanArmy (каждый тип - отдельный класс). Также в игре будет 3 типа солдат: Swordsman (мечники), Lancer (копейщики) и Archer (лучники) (для производства каждого типа также нужно будет создать класс). У каждого типа армии есть свои названия для различных видов солдат. У европейской армии это Knight (для Swordsman), Raubritter (для Lancer) и Ranger (для Archer). У азиатской: Samurai (для Swordsman), Ronin (для Lancer) и Shinobi (для Archer). Также у каждой армии должны быть определенные методы:<br>
+<br>
+<strong>add_swordsman</strong>(name) - добавляет 1 мечника с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Knight Richard", "Samurai Ryuk" etc.<br>
+<strong>add_lancer</strong>(name) - добавляет 1 копейщика с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Lancer Kyle", "Ronin Hanzo" etc.<br>
+<strong>add_archer</strong>(name) - добавляет 1 лучника с выбранным именем к вашей армии. Также добавляет правильный тип перед именем (зависит от выбранной армии). Например - "Ranger Robin", "Shinobi Mei" etc.<br>
+<strong>show_army()</strong> - возвращает вашу армию (как тип dictionary).<br>
+<strong>show_swordsmans()</strong> - возвращает список всех ваших мечников.<br>
+<strong>show_lancers()</strong> - возвращает список всех ваших копейщиков.<br>
+<strong>show_archers()</strong> - возвращает список всех ваших лучников.<br>
+<br>
+Каждый пользователь может выбрать армию только 1 типа.
+В этой миссии вам необходимо использовать паттерн проектирования - <a href='https://en.wikipedia.org/wiki/Abstract_factory_pattern'>Abstract Factory</a>.
+</p>
+
+<p>
+<strong>Пример</strong>:
+<pre class="brush: python">
+my_army = EuropeanArmy()
+enemy_army = AsianArmy()
+
+my_army.add_swordsman("Jaks")
+my_army.add_swordsman("Brin")
+my_army.add_lancer("Harold")
+my_army.add_archer("Robin")
+my_army.add_archer("May")
+
+enemy_army.add_swordsman("Kishimoto")
+enemy_army.add_lancer("Ayabusa")
+enemy_army.add_archer("Kirigae")
+
+my_army.show_army() == {"Knights": 2, "Raubritters": 1, "Rangers": 2, "Total": 5}
+my_army.show_swordsmans() == ["Knight Jaks", "Knight Brin"]
+my_army.show_lancers() == ["Raubritter Harold"]
+my_army.show_archers() == ["Ranger Robin", "Ranger May"]
+    
+enemy_army.show_army() == {"Samurais": 1, "Ronins": 1, "Shinobis": 1, "Total": 3}
+enemy_army.show_swordsmans() == ["Samurai Kishimoto"]
+enemy_army.show_lancers() == ["Ronin Ayabusa"]
+enemy_army.show_archers() == ["Shinobi Kirigae"]
+</pre>
+</p>
+<br>
+
+<p>
+    <strong>Входные данные: </strong>Методы и выражения 2 армий.
+</p>
+
+<p>
+    <strong>Выходные данные: </strong> Поведение экземпляров, как описано выше.
+</p>
+
+
+<p class="for_info_only">
+    <strong>Как это используется: </strong>
+    Для разработки игр.
+</p>
+
+<p>
+    <strong>Предусловия:</strong>
+    2 типа армий.
+    Не более 100 солдат в армии.
+</p>

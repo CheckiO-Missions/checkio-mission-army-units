@@ -1,0 +1,46 @@
+class AbstractArmy:
+    pass
+
+class Swordsman:
+    pass
+
+class Lancer:
+    pass
+
+class Archer:
+    pass
+
+class AsianArmy(AbstractArmy):
+    pass
+
+class EuropeanArmy(AbstractArmy):
+    pass
+
+
+if __name__ == '__main__':
+    #These "asserts" using only for self-checking and not necessary for auto-testing
+
+    my_army = EuropeanArmy()
+    enemy_army = AsianArmy()
+
+    my_army.add_swordsman("Jaks")
+    my_army.add_swordsman("Brin")
+    my_army.add_lancer("Harold")
+    my_army.add_archer("Robin")
+    my_army.add_archer("May")
+
+    enemy_army.add_swordsman("Kishimoto")
+    enemy_army.add_lancer("Ayabusa")
+    enemy_army.add_archer("Kirigae")
+
+    assert my_army.show_army() == {"Knights": 2, "Raubritters": 1, "Rangers": 2, "Total": 5}
+    assert my_army.show_swordsmans() == ["Knight Jaks", "Knight Brin"]
+    assert my_army.show_lancers() == ["Raubritter Harold"]
+    assert my_army.show_archers() == ["Ranger Robin", "Ranger May"]
+    
+    assert enemy_army.show_army() == {"Samurais": 1, "Ronins": 1, "Shinobis": 1, "Total": 3}
+    assert enemy_army.show_swordsmans() == ["Samurai Kishimoto"]
+    assert enemy_army.show_lancers() == ["Ronin Ayabusa"]
+    assert enemy_army.show_archers() == ["Shinobi Kirigae"]
+
+    print("Coding complete? Let's try tests!")
