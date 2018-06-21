@@ -58,7 +58,7 @@ TESTS = {
         prepare_test(middle_code='''my_army = EuropeanArmy()
 soldier_1 = my_army.train_swordsman("David")''',
                      test="soldier_1.introduce()",
-                     answer="Knight David, Europen swordsman")
+                     answer="Knight David, European swordsman")
         ],
     "2. My army": [
         prepare_test(middle_code='''my_army = EuropeanArmy()
@@ -94,7 +94,7 @@ soldier_6 = my_army.train_archer("Kitsune")''',
         prepare_test(middle_code='''my_army = EuropeanArmy()
 soldier_7 = my_army.train_swordsman("Blake")''',
                      test="soldier_7.introduce()",
-                     answer="Knight Blake, Europen swordsman")
+                     answer="Knight Blake, European swordsman")
         ],
     "8. My army": [
         prepare_test(middle_code='''my_army = EuropeanArmy()
@@ -125,5 +125,5 @@ soldier_11 = my_army.train_lancer("Misa")''',
 soldier_12 = my_army.train_archer("Heroki")''',
                      test="soldier_12.introduce()",
                      answer="Shinobi Heroki, Asian archer")
-        ],
+        ]
 }

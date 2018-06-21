@@ -31,7 +31,7 @@ if __name__ == '__main__':
     soldier_5 = enemy_army.train_lancer("Ayabusa")
     soldier_6 = enemy_army.train_archer("Kirigae")
 
-    assert soldier_1.introduce() == "Knight Jaks, Europen swordsman"
+    assert soldier_1.introduce() == "Knight Jaks, European swordsman"
     assert soldier_2.introduce() == "Raubritter Harold, European lancer"
     assert soldier_3.introduce() == "Ranger Robin, European archer"
     
