@@ -1,17 +1,17 @@
 <p>
-    You are the developer of the new strategy game and you need to add to this game the process of the soldiers creation. Let's start with 2 types - AsianArmy and EuropeanArmy (each of them will be a subclass of the Army - class with methods for soldier creation). Also in the game will be the 3 types of the soldiers - Swordsman, Lancer and Archer (also a classes). Each army has the unique names for those 3 types. For the EuropeanArmy there are: Knight (for Swordsman), Raubritter (for Lancer) and Ranger (for Archer). For the AsianArmy: Samurai (for Swordsman), Ronin (for Lancer) and Shinobi (for Archer).<br>
-Each army can create all 3 types of the soldiers using tne next methods:<br>
+    You are the developer of the new strategy game and you need to add the soldier creation process to it. Let's start with the 2 types - AsianArmy and EuropeanArmy (each of them will be a subclass of the Army - class with the methods for the creation of soldiers). Also there will be 3 types of soldiers in the game - Swordsman, Lancer, and Archer (also the classes). Each army has unique names for those 3 types. For the EuropeanArmy there are: Knight (for Swordsman), Raubritter (for Lancer), and Ranger (for Archer). For the AsianArmy: Samurai (for Swordsman), Ronin (for Lancer), and Shinobi (for Archer).<br>
+Each army can create all 3 types of the soldiers using the next methods:<br>
 <br>
 <strong>train_swordsman</strong>(name) - create an instance of the Swordsman.<br>
 <strong>train_lancer</strong>(name) - create an instance of the Lancer.<br>
 <strong>train_archer</strong>(name) - create an instance of the Archer.<br>
 <br>
-All 3 classes (Swordsman, Lancer and Archer) shoud have the method <strong>introduce()</strong>, which returns the string which describes the soldiers in the next format:<br>
+All 3 classes (Swordsman, Lancer, and Archer) should have the <strong>introduce()</strong> method, which returns the string that describes the soldiers in the following format:<br>
 "'type' 'name', 'army type' 'specialization(basic class)'", for example:<br>
 "Raubritter Harold, European lancer"<br>
 "Shinobi Kirigae, Asian archer"<br>
 <br>
-In this mission you should use the <a href='https://en.wikipedia.org/wiki/Abstract_factory_pattern'>Abstract Factory</a> design patter.
+In this mission you should use the <a href='https://en.wikipedia.org/wiki/Abstract_factory_pattern'>Abstract Factory</a> design pattern.
 </p>
 
 <p>
@@ -39,11 +39,11 @@ soldier_6.introduce() == "Shinobi Kirigae, Asian archer"
 </p>
 
 <p>
-    <strong>Input: </strong>names of the soldiers and methods of the classes.
+    <strong>Input: </strong>The names of the soldiers and class methods.
 </p>
 
 <p>
-    <strong>Output: </strong>description of the soldiers.
+    <strong>Output: </strong>The description of soldiers.
 </p>
 
 
@@ -55,5 +55,6 @@ soldier_6.introduce() == "Shinobi Kirigae, Asian archer"
 <p>
     <strong>Precondition:</strong>
     2 types of the army.<br>
-    3 specializations of the soldiers.
+    3 categories of soldiers.
 </p>
+
